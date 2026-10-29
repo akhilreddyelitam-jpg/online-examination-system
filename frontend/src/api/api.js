@@ -1,6 +1,6 @@
 // Use the same hostname as the frontend so LAN access works too.
 // Example: opening the frontend at 192.168.0.11:5173 calls 192.168.0.11:8080.
-const API_BASE_URL = `${window.location.protocol}//${window.location.hostname}:8080/api`;
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
